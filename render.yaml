@@ -15,4 +15,4 @@ services:
         value: "AIzaSyCIHEdKAX7VfQmp6o3_Kl3gxpdgJU-Tik4"
     routes:
       - src: /
-        dest: main:app
+        dest: /main.py
