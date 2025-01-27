@@ -1,0 +1,18 @@
+version: 1
+services:
+  - type: web
+    name: fastapi-project
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+    autoDeploy: true
+    envVars:
+      - key: "ENVIRONMENT"
+        value: "production"
+      - key: "TAVILY_API_KEY"
+        value: "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"
+      - key: "GEMINI_API_KEY"
+        value: "AIzaSyCIHEdKAX7VfQmp6o3_Kl3gxpdgJU-Tik4"
+    routes:
+      - src: /
+        dest: main:app
