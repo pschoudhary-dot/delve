@@ -5,13 +5,21 @@ from pydantic_models.chat_body import ChatBody
 from services.llm_service import LLMService
 from services.sort_source_service import SortSourceService
 from services.search_service import SearchService
-
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 search_service = SearchService()
 sort_source_service = SortSourceService()
 llm_service = LLMService()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust this to your frontend's URL for production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #root
 @app.get("/")
