@@ -13,6 +13,11 @@ search_service = SearchService()
 sort_source_service = SortSourceService()
 llm_service = LLMService()
 
+#root
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Delve AI API!"}
+
 
 # chat websocket
 @app.websocket("/ws/chat")
