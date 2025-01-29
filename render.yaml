@@ -6,8 +6,8 @@ services:
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: TAVILY_API_KEY
-        value: "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"
+        value: "APIKEY"
       - key: GEMINI_API_KEY
-        value: "AIzaSyCIHEdKAX7VfQmp6o3_Kl3gxpdgJU-Tik4"
+        value: "APIKEY"
     autoDeploy: true
     region: oregon  # Choose your preferred region
